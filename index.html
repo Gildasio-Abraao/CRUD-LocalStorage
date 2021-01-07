@@ -61,9 +61,11 @@
         </div>
 
         <div id="annotations" class="none">
+            <img src="images/square.png" v-on:click="showMenu" alt="mobile menu" id="menumobile">
             <div class="profile">
                 <img src="images/user.png" alt="user" id="userimg">
-                <p class="username">{{ localStorage.getItem('user') }}</p>
+                <p class="username">{{ username }}</p>
+                <button v-on:click="logout">Logout</button>
             </div>
             <div class="cards">
                 <div class="card">
@@ -118,7 +120,6 @@
         </div>
     </div>
     <script src="js/vue.min.js"></script>
-    <script src="js/annotations.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

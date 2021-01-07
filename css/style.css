@@ -38,7 +38,7 @@ body {
     justify-content: space-between;
 }
 .container-right {
-    width: 40%;
+    width: 45%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -231,6 +231,7 @@ form input[type = 'submit']:focus {
     justify-content: center;
     align-items: center;
     background-color: rgb(8 152 109);
+    transition: 0.3s;
 }
 .cards {
     width: 70%;
@@ -367,4 +368,163 @@ form input[type = 'submit']:focus {
 }
 .bRed {
     background: #ff9494 !important;
+}
+.profile button {
+    margin-top: 20px;
+    width: 25%;
+    cursor: pointer;
+    background: white;
+    font-size: 0.9rem;
+    padding: 12px;
+    border-radius: 35px;
+    color: #434343;
+    outline: none;
+    transition: 0.3s;
+    border: none;
+    animation: login 0.3s;
+}
+.profile button:hover {
+    background: #434343;
+    color: white;
+    text-shadow: 0px 0px 2px;
+}
+
+/*responsividade*/
+
+#menumobile {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 6%;
+    display: none;
+    z-index: 3;
+}
+.show {
+    display: flex !important;
+}
+@media (max-width: 1140px) {
+
+    @keyframes logout {
+        0%{transform: translate(-10px, 0px); opacity: 0;}
+        100%{transform: translate(0px, 0px); opacity: 1;}
+    }
+    @keyframes login {
+        0%{transform: translate(-10px, 0px); opacity: 0;}
+        100%{transform: translate(0px, 0px); opacity: 1;}
+    }
+
+    .container-right {
+        width: 65%;
+    }
+    .container-left {
+        width: 70%;
+        background: url(../images/background.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    #videoBackground {
+        display: none;
+    }
+}
+
+@media (max-width: 940px) {
+    .container-left {
+        display: none;
+    }
+    .container-right {
+        margin: auto;
+        width: 100%;
+        background-color: #ffffffe0;
+    }
+    .content {
+        width: 70%;
+        margin: auto;
+    }
+    .indexArea {
+        background: url(../images/background.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+@media (max-width: 856px) {
+    .profile {
+        display: none;
+        animation: login 0.3s;
+        position: absolute;
+        left: 0;
+    }
+    .cards {
+        width: 85%;
+    }
+    #menumobile {
+        display: block;
+    }
+}
+
+@media (max-width: 780px) {
+    .content {
+        width: 90%;
+    }
+    .profile {
+        width: 45%;
+    }
+}
+
+@media (max-width: 582px) {
+    .content {
+        width: 100%;
+        padding: 0px;
+    }
+    .profile {
+        width: 55%;
+    }
+    .profile button {
+        width: 30%;
+    }
+    #menumobile {
+        width: 10%;
+    }
+    .card {
+        width: 90%;
+    }
+    #annotations .username {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 430px) {
+    .profile {
+        width: 60%;
+    }
+    .profile button {
+        width: 45%;
+    }
+    #userimg {
+        width: 65%;
+    }
+    #menumobile {
+        width: 13%;
+    }
+    .card {
+        width: 100%;
+    }
+    .formCard textarea {
+        width: 100%;
+    }
+    .formCard button {
+        width: 40%;
+    }
+    .cards {
+        width: 95%;
+    }
+    .cadastro .submit-container p, .cadastro .signup p {
+        font-size: 0.8rem;
+    }    
+    .signup p {
+        font-size: 1rem;
+    }
+    form input[type = 'submit'] {
+        width: 45%;
+    }
 }
