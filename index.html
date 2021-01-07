@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,500&display=swap" rel="stylesheet">
+    <title>DevAnn</title>
+</head>
+<body>
+    <div class="container" id="app">
+        <div class="indexArea">
+            <div class="container-left">
+                <video src="images/canada.mp4" id="videoBackground" autoplay muted loop></video>
+            </div>
+    
+            <div class="container-right">
+                <div class="content" id="login">
+                    <div class="text-container">
+                        <p class="title">welcome back</p>
+                    </div>
+                    <div class="form-container">
+                        <form method="dialog" v-on:submit="login">
+                            <input type="text" name="nome" v-model="logUser" placeholder="Username" autocomplete="off" id="name" maxlength="15" minlength="8" required>
+                            <input type="password" name="password" v-model="logPass" placeholder="Password" maxlength="20" minlength="8" required>
+                            <div class="submit-container">
+                                <input type="submit" value="Login">
+                                <p><a href="#">Forgot password?</a></p>
+                            </div>
+                        </form>
+                        <div class="signup">
+                            <p>Don't have an account?</p>
+                            <button id="up" v-on:click="showForm">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="content cadastro none">
+                    <div class="text-container">
+                        <p class="title">join us</p>
+                    </div>
+                    <div class="form-container">
+                        <form method="dialog" v-on:submit="newUser">
+                            <input type="text" name="nome" placeholder="Username" v-model="username" autocomplete="off" maxlength="15" minlength="8" required>
+                            <input type="password" name="password" placeholder="Password" v-model="password" maxlength="30" minlength="8" required>
+                            <input type="password" name="Cpassword" placeholder="Confirm password" v-model="cpassword" maxlength="30" minlength="8" required>
+                            <div class="submit-container">
+                                <input type="submit" value="Sign Up">
+                                <p>By registering, you agree to our <a href="#">Terms</a>, <a href="#">Data Policy</a>
+                                     and <a href="#">Cookie Policy</a>.</p>
+                            </div>
+                        </form>
+                        <div class="signup">
+                            <p>Already have an account?</p>
+                            <button v-on:click="showForm">Sign In</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="annotations" class="none">
+            <div class="profile">
+                <img src="images/user.png" alt="user" id="userimg">
+                <p class="username">{{ localStorage.getItem('user') }}</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="formCard none">
+                        <input type="text" v-model="titleCard" name="titleCard" placeholder="Enter a Title">
+                        <textarea name="textCard" v-model="textCard" cols="80" rows="5" placeholder="Enter a Description"></textarea>
+                        <button v-on:click="showAnn">Salvar</button>
+                    </div>
+                    <div class="saved none">
+                        <div class="card-title">{{ titleCard }}</div>
+                        <div class="text-card">{{ textCard }}</div>
+                    </div>
+                    <div class="alert" v-on:click="showCard" v-if="textCard == undefined">+</div>
+                </div>
+                <div class="card none">
+                    <div class="formCard none">
+                        <input type="text" v-model="titleCard2" name="titleCard" placeholder="Enter a Title">
+                        <textarea name="textCard" v-model="textCard2" cols="80" rows="5" placeholder="Enter a Description"></textarea>
+                        <button v-on:click="showAnn">Salvar</button>
+                    </div>
+                    <div class="saved none">
+                        <div class="card-title">{{ titleCard2 }}</div>
+                        <div class="text-card">{{ textCard2 }}</div>
+                    </div>
+                    <div class="alert" v-on:click="showCard" v-if="textCard2 == undefined">+</div>
+                </div>
+                <div class="card none">
+                    <div class="formCard none">
+                        <input type="text" v-model="titleCard3" name="titleCard" placeholder="Enter a Title">
+                        <textarea name="textCard" v-model="textCard3" cols="80" rows="5" placeholder="Enter a Description"></textarea>
+                        <button v-on:click="showAnn">Salvar</button>
+                    </div>
+                    <div class="saved none">
+                        <div class="card-title">{{ titleCard3 }}</div>
+                        <div class="text-card">{{ textCard3 }}</div>
+                    </div>
+                    <div class="alert" v-on:click="showCard" v-if="textCard3 == undefined">+</div>
+                </div>
+                <div class="card none">
+                    <div class="formCard none">
+                        <input type="text" v-model="titleCard4" name="titleCard" placeholder="Enter a Title">
+                        <textarea name="textCard" v-model="textCard4" cols="80" rows="5" placeholder="Enter a Description"></textarea>
+                        <button v-on:click="showAnn">Salvar</button>
+                    </div>
+                    <div class="saved none">
+                        <div class="card-title">{{ titleCard4 }}</div>
+                        <div class="text-card">{{ textCard4 }}</div>
+                    </div>
+                    <div class="alert" v-on:click="showCard" v-if="textCard4 == undefined">+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/vue.min.js"></script>
+    <script src="js/annotations.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

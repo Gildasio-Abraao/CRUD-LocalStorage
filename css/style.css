@@ -1,0 +1,370 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    overflow: hidden;
+}
+
+@keyframes login {
+    0%{margin-left: -60px; opacity: 0;}
+    100%{margin-left: 0; opacity: 1;}
+}
+#login {
+    animation: login 1s;
+}
+@keyframes logout {
+    0%{transform: translate(30px, 0px); opacity: 0;}
+    100%{transform: translate(0px, 0px); opacity: 1;}
+}
+.cadastro {
+    animation: logout 1s;
+}
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+}
+.indexArea{
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container-right {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+.container-left {
+    width: 60%;
+    height: 100%;
+}
+#videoBackground {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+.content {
+    padding: 50px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.form-container {
+    width: 75%;
+}
+.form-container form{
+    display: flex;
+    flex-direction: column;
+}
+.submit-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: #383535;
+    margin-bottom: 15px;
+}
+form input {
+    padding: 15px;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    background: #58d883;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.5s;
+    border-radius: 30px;
+}
+form input:focus {
+    background: white;
+    box-shadow: -2px 2px 5px #2f3f2b;
+    color: #729ad6;
+}
+form input::placeholder {
+    color: rgba(255, 255, 255, 0.521);
+    font-weight: 300;
+}
+form input[type = 'submit'] {
+    margin-top: 0;
+    width: 50%;
+    cursor: pointer;
+    background: #8bd2c2;
+    font-size: 0.9rem;
+    padding: 12px;
+    transition: 0.3s;
+}
+form input[type = 'submit']:hover {
+    background: transparent;
+    color:#8bd2c2;
+    font-weight: 900;
+    text-shadow: 0px 0px 2px;
+}
+form input[type = 'submit']:focus {
+    background: transparent;
+    color: #8bd2c2;
+    border-bottom: 2px solid;
+    border-radius: 0;
+    box-shadow: none !important;
+}
+.submit-container a {
+    font-size: 0.9rem;
+    color: #7b7b7b;
+}
+.submit-container a:hover {
+    text-decoration: none;
+}
+/*signup*/
+
+.signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+}
+.signup button {
+    margin-top: 20px;
+    width: 60%;
+    cursor: pointer;
+    background: #434343;
+    font-size: 0.9rem;
+    padding: 12px;
+    border-radius: 35px;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+    border: none;
+}
+.signup p {
+    font-size: 1.1rem;
+    color: #353535;
+}
+.signup button:hover {
+    background: transparent;
+    color: #434343;
+    text-shadow: 0px 0px 2px;
+}
+.signup button:focus {
+    background: transparent;
+    color: #70ffa9;
+    border-bottom: 2px solid;
+    border-radius: 0;
+    box-shadow: none !important;
+}
+
+/*tela cadastro*/
+
+.cadastro .submit-container {
+    display: block;
+}
+
+.cadastro .submit-container input[type = 'submit'] {
+    width: 100%;
+}
+.cadastro .submit-container p{
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #8e8e8e;
+}
+.none {
+    display: none !important;
+}
+.cadastro .signup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px;
+    margin-top: 40px;
+}
+.cadastro .signup button{
+    margin-top: 0;
+    width: 40%;
+}
+.cadastro .signup p {
+    font-size: 1rem;
+}
+
+/*annotations part*/
+
+#annotations {
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#userimg {
+    width: 50%;
+}
+#annotations .username {
+    font-size: 2rem;
+    color: white;
+    margin-top: 5px;
+}
+.profile {
+    width: 30%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(8 152 109);
+}
+.cards {
+    width: 70%;
+    height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    overflow: auto;
+}
+.card:hover .alert {
+    color: rgb(8 152 109);
+}
+.card {
+    box-sizing: border-box;
+    width: 80%;
+    background: white;
+    border-radius: 40px;
+    box-shadow: 0px 0px 5px #bdbdbd;
+    padding: 30px;
+    cursor: context-menu;
+    transition: 0.3s;
+    animation: login 0.3s;
+    margin-top: 10px;
+}
+/* width */
+.cards::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+.cards::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+.cards::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+.cards::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+.card-title {
+    color: #6b6b6b;
+    font-weight: 600;
+    font-size: 1.2rem;
+    animation: logout 0.3s;
+}
+.text-card{
+    width: 80%;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #3e3e3e;
+    animation: login 0.3s;
+}
+.alert {
+    color: #403b3b;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    font-weight: 600;
+    margin: 0!important;
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    font-family: cursive;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.formCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transition: 0.3s;
+}
+.formCard input {
+    padding: 15px;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    background: #58c0d8;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.5s;
+    border-radius: 30px;
+    animation: login 0.3s;
+}
+.formCard input::placeholder {
+    color: rgba(255, 255, 255, 0.651);
+    text-transform: lowercase;
+}
+.formCard textarea {
+    padding: 15px;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    background: #58d883;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.5s;
+    width: 80%;
+    border-radius: 30px;
+    animation: logout 0.3s;
+}
+.formCard textarea::placeholder {
+    color: rgba(255, 255, 255, 0.651);
+    text-transform: lowercase;
+}
+.formCard button {
+    margin-top: 20px;
+    width: 25%;
+    cursor: pointer;
+    background: #434343;
+    font-size: 0.9rem;
+    padding: 12px;
+    border-radius: 35px;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+    border: none;
+    animation: login 0.3s;
+}
+.formCard button:hover {
+    background: transparent;
+    color: #434343;
+    text-shadow: 0px 0px 2px;
+}
+.bRed {
+    background: #ff9494 !important;
+}
